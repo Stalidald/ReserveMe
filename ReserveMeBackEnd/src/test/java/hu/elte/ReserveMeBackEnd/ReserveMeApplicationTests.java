@@ -1,4 +1,4 @@
-package hu.elte.demo;
+package hu.elte.ReserveMeBackEnd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
