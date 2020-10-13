@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Stalidald/ReserveMe.svg?branch=develop)](https://travis-ci.org/github/Stalidald/ReserveMe/)
+
 # ReserveMe
 
 * [Introduction](README.md#intro)
