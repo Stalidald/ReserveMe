@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+matrix:
+  include:
+    - language: java
+      before_install: 
+       - chmod +x ./ReserveMeBackEnd/build.sh
+       - cd ./ReserveMeBackEnd
+      script: ./build.sh
+    - language: node_js
+      node_js:
+       - "12.0"
+      before_install:
+       - chmod +x ./ReserveMeFrontEnd/build.sh
+       - npm install -g @angular/cli
+       - cd ./ReserveMeFrontEnd
+      script: ./build.sh
