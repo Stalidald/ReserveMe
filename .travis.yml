@@ -5,6 +5,7 @@ matrix:
     - language: java
       before_install: 
        - chmod +x ./ReserveMeBackEnd/build.sh
+       - chmod +x ./ReserveMeBackEnd/gradlew
        - cd ./ReserveMeBackEnd
       script: ./build.sh
     - language: node_js
