@@ -17,7 +17,6 @@ The goal with this project is to create an ultimate platform for service provide
 The customers can reserve time matching for their needs, contact with provider and both side can leave feedback after the business is done.
 
 ## [Access](#access)
-The application can be downloaded from [ReserveMe](http://stalidald.web.elte.hu/ReserveMe).
 The deploy is done by Travis CI after each commit with the ReserveMeBackEnd/deploy.sh and ReserveMeFrontEnd/deploy_be.sh scripts.
 
 ## [Features](#features)
