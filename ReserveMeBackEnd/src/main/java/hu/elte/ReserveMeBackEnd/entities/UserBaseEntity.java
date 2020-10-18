@@ -1,5 +1,6 @@
 package hu.elte.ReserveMeBackEnd.entities;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,15 +12,18 @@ import javax.persistence.MappedSuperclass;
 @EqualsAndHashCode(callSuper=false)
 public class UserBaseEntity extends BaseEntity {
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "USERNAME", nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "EMAIL", nullable = false)
     private String email;
 
-    @Column
-    private String name;
+    @Column(name = "NAME", nullable = true)
+    protected String name;
 }

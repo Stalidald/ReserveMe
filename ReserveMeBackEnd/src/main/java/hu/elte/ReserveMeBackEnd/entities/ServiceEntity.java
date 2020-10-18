@@ -1,5 +1,7 @@
 package hu.elte.ReserveMeBackEnd.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,24 +15,33 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(	name = "services",
+@Table(name = "services",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "id")
         })
-public class ServiceEntity extends BaseEntity{
-    @Column
+public class ServiceEntity extends BaseEntity {
+    @Column(name = "LABEL")
     private String label;
 
-    @Column
+    @Column(name = "TYPE")
     private String type;
 
-    @Column
-    @Lob
+    @Column(name = "DESCRIPTION", columnDefinition = "TEXT")
     private String description;
 
-    @Column
+    @Column(name = "DURATION")
     private int duration;
 
-    @Column
+    @Column(name = "PRICE")
     private int price;
+
+    @OneToMany(targetEntity = ReservationEntity.class, mappedBy = "service")
+    @JsonIgnoreProperties("service")
+    @JsonIgnore
+    protected List<ReservationEntity> reservations;
+
+    @ManyToOne(targetEntity = ServiceProviderEntity.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SERVICE_PROVIDER_ID")
+    @JsonIgnoreProperties("services")
+    protected ServiceProviderEntity serviceProvider;
 }

@@ -1,5 +1,7 @@
 package hu.elte.ReserveMeBackEnd.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,11 +22,13 @@ import java.util.List;
         })
 public class ServiceProviderEntity extends UserBaseEntity {
 
-        @Column
-        @OneToMany
-        private List<ServiceEntity> services;
+        @OneToMany(targetEntity = ServiceEntity.class, mappedBy = "serviceProvider")
+        @JsonIgnoreProperties("serviceProvider")
+        @JsonIgnore
+        protected List<ServiceEntity> services;
 
-        @Column
-        @OneToMany
-        private List<ReservationEntity> madeReservations;
+        @OneToMany(targetEntity = ReservationEntity.class, mappedBy = "serviceProvider")
+        @JsonIgnoreProperties("serviceProvider")
+        @JsonIgnore
+        protected List<ReservationEntity> reservations;
 }

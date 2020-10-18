@@ -1,5 +1,7 @@
 package hu.elte.ReserveMeBackEnd.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,14 +15,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(	name = "customers",
+@Table(name = "customers",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
         })
-public class CustomerEntity extends UserBaseEntity{
+public class CustomerEntity extends UserBaseEntity {
 
-        @Column
-        @OneToMany
-        private List<ReservationEntity> madeReservations;
+    @OneToMany(targetEntity = ReservationEntity.class, mappedBy = "customer")
+    @JsonIgnoreProperties("customer")
+    @JsonIgnore
+    protected List<ReservationEntity> reservations;
 }
