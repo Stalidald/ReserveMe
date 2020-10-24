@@ -94,7 +94,7 @@ public class ServiceProviderService extends BaseService<ServiceProviderEntity>{
      */
     public ServiceProviderEntity loadServiceProviderByName(String name) throws NameNotFoundException {
         return serviceProviderRepository
-                .findByName(name)
+                .findByUsername(name)
                 .orElseThrow(() -> new NameNotFoundException(name + " not found!"));
     }
 }

@@ -94,7 +94,7 @@ public class CustomerService extends BaseService<CustomerEntity>{
      */
     public CustomerEntity loadCustomerByName(String name) throws NameNotFoundException {
         return customerRepository
-                .findByName(name)
+                .findByUsername(name)
                 .orElseThrow(() -> new NameNotFoundException(name + " not found!"));
     }
 }

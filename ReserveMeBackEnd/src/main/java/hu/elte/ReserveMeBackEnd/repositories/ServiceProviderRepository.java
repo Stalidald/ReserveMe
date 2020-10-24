@@ -9,15 +9,13 @@ import java.util.Optional;
 
 @Repository
 public interface ServiceProviderRepository extends CrudRepository<ServiceProviderEntity, Long> {
-    Optional<ServiceProviderEntity> findByUserName(String userName);
+    Optional<ServiceProviderEntity> findByUsername(String username);
 
     Optional<ServiceProviderEntity> findByEmail(String email);
 
-    Optional<ServiceProviderEntity> findByName(String name);
-
     Iterable<ServiceProviderEntity> findAllByServices(ServiceEntity service);
 
-    Boolean existsByUserName(String userName);
+    Boolean existsByUsername(String username);
 
     Boolean existsByEmail(String email);
 }

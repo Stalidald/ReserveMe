@@ -22,12 +22,12 @@ import java.util.Date;
 public class ReservationEntity extends BaseEntity {
 
     @NotNull
-    @Column(name = "FROM", nullable = false)
-    private Date from;
+    @Column(name = "BEGIN", nullable = false)
+    private Date begin;
 
     @NotNull
-    @Column(name = "UNTIL", nullable = false)
-    private Date until;
+    @Column(name = "END", nullable = false)
+    private Date end;
 
     @ManyToOne(targetEntity = ServiceEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "SERVICE_ID")

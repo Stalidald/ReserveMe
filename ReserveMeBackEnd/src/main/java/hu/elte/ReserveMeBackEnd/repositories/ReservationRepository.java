@@ -13,11 +13,11 @@ import java.util.Optional;
 public interface ReservationRepository extends CrudRepository<ReservationEntity, Long> {
     Optional<ReservationEntity> findByService(ServiceEntity service);
 
-    Optional<ReservationEntity> findByFromAfter(Date from);
+    Optional<ReservationEntity> findByBeginAfter(Date begin);
 
-    Optional<ReservationEntity> findByFromBefore(Date from);
+    Optional<ReservationEntity> findByBeginBefore(Date begin);
 
-    Optional<ReservationEntity> findByToAfter(Date to);
+    Optional<ReservationEntity> findByEndAfter(Date end);
 
-    Optional<ReservationEntity> findByToBefore(Date to);
+    Optional<ReservationEntity> findByEndBefore(Date end);
 }
