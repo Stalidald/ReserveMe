@@ -8,13 +8,11 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<CustomerEntity, Long> {
-    Optional<CustomerEntity> findByUserName(String userName);
+    Optional<CustomerEntity> findByUsername(String username);
 
     Optional<CustomerEntity> findByEmail(String email);
 
-    Optional<CustomerEntity> findByName(String name);
-
-    Boolean existsByUserName(String userName);
+    Boolean existsByUsername(String userName);
 
     Boolean existsByEmail(String email);
 }
