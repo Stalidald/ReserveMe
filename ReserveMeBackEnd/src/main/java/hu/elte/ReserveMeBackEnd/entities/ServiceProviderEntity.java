@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.xml.ws.Service;
 import java.util.List;
 
 @Data
@@ -31,4 +32,10 @@ public class ServiceProviderEntity extends UserBaseEntity {
         @JsonIgnoreProperties("serviceProvider")
         @JsonIgnore
         protected List<ReservationEntity> reservations;
+
+        public ServiceProviderEntity(String name, String email, String userName) {
+                this.name = name;
+                this.setUsername(userName);
+                this.setEmail(email);
+        }
 }

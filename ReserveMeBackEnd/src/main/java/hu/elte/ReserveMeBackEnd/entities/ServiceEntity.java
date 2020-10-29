@@ -44,4 +44,10 @@ public class ServiceEntity extends BaseEntity {
     @JoinColumn(name = "SERVICE_PROVIDER_ID")
     @JsonIgnoreProperties("services")
     protected ServiceProviderEntity serviceProvider;
+
+    public ServiceEntity(String label, String type, int price) {
+        this.label = label;
+        this.type = type;
+        this.price = price;
+    }
 }
