@@ -43,4 +43,9 @@ public class ReservationEntity extends BaseEntity {
     @JoinColumn(name = "SERVICE_PROVIDER_ID")
     @JsonIgnoreProperties("reservations")
     protected ServiceProviderEntity serviceProvider;
+
+    public ReservationEntity(Date begin, Date end) {
+        this.begin = begin;
+        this.end = end;
+    }
 }

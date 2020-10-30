@@ -1,13 +1,16 @@
 package hu.elte.ReserveMeBackEnd;
 
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+//@RunWith(SpringRunner.class)
 @SpringBootTest
-class ReserveMeApplicationTests {
+public class ReserveMeApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
+
 
 }

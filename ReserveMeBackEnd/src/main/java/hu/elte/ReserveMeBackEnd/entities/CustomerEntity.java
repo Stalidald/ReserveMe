@@ -2,6 +2,7 @@ package hu.elte.ReserveMeBackEnd.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import hu.elte.ReserveMeBackEnd.services.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,4 +27,8 @@ public class CustomerEntity extends UserBaseEntity {
     @JsonIgnoreProperties("customer")
     @JsonIgnore
     protected List<ReservationEntity> reservations;
+
+    public CustomerEntity(String name) {
+        this.name = name;
+    }
 }
