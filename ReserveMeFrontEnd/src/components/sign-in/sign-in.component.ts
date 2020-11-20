@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
     private router: Router
   ) {}
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/game';
 
     this.form = this.fb.group({
@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
+  onSubmit(): void {
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
     if (this.form.valid) {
