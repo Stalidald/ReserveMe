@@ -1,0 +1,1 @@
+scp -o "StrictHostKeyChecking no"  -i reserveme_key.ppk dist/ReserveMeFrontEnd/*.* stalidald@caesar.elte.hu:../web/ReserveMe

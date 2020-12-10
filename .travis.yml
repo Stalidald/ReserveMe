@@ -3,7 +3,8 @@ dist: trusty
 matrix:
   include:
     - language: java
-      before_install: 
+      before_install:
+       - chmod 400 ./ReserveMeBackEnd/reserveme_key_be.ppk
        - chmod +x ./ReserveMeBackEnd/gradlew
        - chmod +x ./ReserveMeBackEnd/gradlew.bat
        - chmod +x ./ReserveMeBackEnd/build.sh
@@ -14,6 +15,8 @@ matrix:
        - "12.0"
       before_install:
        - chmod +x ./ReserveMeFrontEnd/build.sh
+       - chmod +x ./ReserveMeFrontEnd/deploy.sh
+       - chmod 400 ./ReserveMeFrontEnd/reserveme_key.ppk
        - npm install -g @angular/cli
        - cd ./ReserveMeFrontEnd
       script: ./build.sh
