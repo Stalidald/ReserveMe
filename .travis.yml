@@ -3,7 +3,8 @@ dist: trusty
 matrix:
   include:
     - language: java
-      before_install: 
+      before_install:
+       - chmod 400 ./ReserveMeBackEnd/reserveme_key_be.ppk
        - chmod +x ./ReserveMeBackEnd/gradlew
        - chmod +x ./ReserveMeBackEnd/gradlew.bat
        - chmod +x ./ReserveMeBackEnd/build.sh
